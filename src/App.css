@@ -1,0 +1,48 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+html,
+body {
+  margin: 0;
+}
+
+.logo{
+    width: clamp(300px, 100%, 450px);
+}
+
+.nav-btn-box {
+  border-top: 3px double gray;
+}
+
+.category a:hover {
+  color: #ff2c99;
+}
+
+@media screen and (max-width: 992px) {
+  .head-news {
+    flex-direction: column;
+    align-items: center;  
+  }
+  .head-news-img{
+    min-width: 100%;
+    min-height: 50%;
+    
+  }
+  .head-news-text{
+    min-width: 80%;
+    min-height: 50%;
+    margin-top: -10vw;
+    padding: 2vh;
+    background-color: white;
+  }
+
+  .head-news-text h2{
+    font-size: clamp(10px, 2vw, 32px);
+    width: 100%;
+    box-sizing: border-box;
+    font-weight: 1000;
+  }
+  .head-news-text p{
+
+  }
+}
