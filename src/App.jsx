@@ -10,7 +10,7 @@ function App() {
   //new_api url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`
   //noona url = "https://noona-times-be-5ca9402f90d9.herokuapp.com/top-headlines"
   const [url, setUrl] = useState(
-    new URL(`https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`)
+    new URL("https://noona-times-be-5ca9402f90d9.herokuapp.com/top-headlines")
   );
   const [news, setNews] = useState([]);
   console.log("url", url);

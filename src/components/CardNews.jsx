@@ -8,7 +8,7 @@ const CardNews = ({ news }) => {
       {news.map((news, idx) => (
         <div
           key={idx}
-          className="card w-full min-h-[550px] flex flex-col p-[1vh] box-border"
+          className="card w-full min-h-[450px] flex flex-col p-[1vh] box-border"
         >
           <img
             src={

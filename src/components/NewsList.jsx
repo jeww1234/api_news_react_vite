@@ -28,16 +28,18 @@ const NewsList = ({ news }) => {
           </h2>
           <div className="w-[100%]">
             <p className="text-[black] text-[1.2vw] m-[0px] px-[1vw] py-[0.5vw] haed-news-description">
-              {mainNews.content}
+              {mainNews.content ? mainNews.content : "내용 없음 내용 없음 내용 없음"}
             </p>
-            <p
+            <span>{mainNews.source.name ? mainNews.source.name : "소스 없음"}</span>
+            <span
               href={mainNews.url}
               target="_blank"
               rel="noopener noreferrer"
               className="hover:underline text-[1vw] px-[1vw] head-news-date m-[0px]"
             >
               {mainNews.publishedAt}
-            </p>
+            </span>
+            
           </div>
         </div>
       </div>
