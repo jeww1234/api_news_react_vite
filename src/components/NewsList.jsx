@@ -1,6 +1,13 @@
 import React from "react";
 import CardNews from "./CardNews"
 import PageNation from "./PageNation";
+import moment from 'moment';
+import 'moment/locale/ko';
+
+moment.locale('ko'); // 한국어로 설정
+
+
+
 
 const NewsList = ({ news }) => {
   if (!news || news.length === 0) return <p>뉴스가 없습니다.</p>;
@@ -37,7 +44,7 @@ const NewsList = ({ news }) => {
               rel="noopener noreferrer"
               className="hover:underline text-[1vw] px-[1vw] head-news-date m-[0px]"
             >
-              {mainNews.publishedAt}
+              {moment(mainNews.publishedAt).fromNow()}
             </span>
             
           </div>

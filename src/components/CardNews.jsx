@@ -1,5 +1,10 @@
 import React from "react";
 import LimitedText from "./LimitedText";
+import moment from 'moment';
+import 'moment/locale/ko';
+
+moment.locale('ko');
+
 
 const CardNews = ({ news }) => {
   console.log("cardnews", news);
@@ -34,7 +39,7 @@ const CardNews = ({ news }) => {
                 출처 : {news.source.name}
               </span>
               <span className="text-[1.2vh] px-[2vh] mb-[5vh]">
-                {news.publishedAt}
+                {moment(news.publishedAt).fromNow()}
               </span>
             </div>
           </div>
