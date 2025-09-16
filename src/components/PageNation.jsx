@@ -2,8 +2,11 @@ import React from 'react'
 
 const PageNation = () => {
   return (
-    <div>
-      페이지 네이션
+    <div className='flex justify-center'>
+      <div>1</div>
+      <div>2</div>
+      <div>3</div>
+      <div>4</div>
     </div>
   )
 }

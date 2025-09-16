@@ -6,8 +6,8 @@ body {
   margin: 0;
 }
 
-.logo{
-    width: clamp(300px, 100%, 450px);
+.logo {
+  width: clamp(300px, 100%, 450px);
 }
 
 .nav-btn-box {
@@ -21,14 +21,13 @@ body {
 @media screen and (max-width: 992px) {
   .head-news {
     flex-direction: column;
-    align-items: center;  
+    align-items: center;
   }
-  .head-news-img{
+  .head-news-img {
     min-width: 100%;
     min-height: 50%;
-    
   }
-  .head-news-text{
+  .head-news-text {
     min-width: 80%;
     min-height: 50%;
     margin-top: -10vw;
@@ -36,13 +35,42 @@ body {
     background-color: white;
   }
 
-  .head-news-text h2{
+  .head-news-text h2 {
     font-size: clamp(10px, 2vw, 32px);
     width: 100%;
     box-sizing: border-box;
     font-weight: 1000;
   }
-  .head-news-text p{
+  .haed-news-description {
+    font-size: clamp(8px, 1.6vw, 18px);
+  }
+  .head-news-date {
+    font-size: clamp(6px, 1.2vw, 12px);
+  }
+}
 
+/* 기본: 1열 */
+.card-grid {
+  grid-template-columns: 1fr;
+}
+
+/* 작은 화면 이상: 2열 */
+@media (min-width: 640px) {
+  .card-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* 중간 화면 이상: 3열 */
+@media (min-width: 768px) {
+  .card-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* 큰 화면 이상: 4열 */
+@media (min-width: 1280px) {
+  .card-grid {
+    grid-template-columns: repeat(4, 1fr);
   }
 }

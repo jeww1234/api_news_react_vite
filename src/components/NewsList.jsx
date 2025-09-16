@@ -1,35 +1,48 @@
 import React from "react";
+import CardNews from "./CardNews"
+import PageNation from "./PageNation";
 
 const NewsList = ({ news }) => {
   if (!news || news.length === 0) return <p>뉴스가 없습니다.</p>;
   const mainNews = news[0];
 
   return (
-    <div className="max-w-[1450px] mt-[-10vh] h-[3000px] mx-[auto]">
+    <div className="max-w-[1450px] mt-[-14vh] mx-[auto]">
       <div className="flex head-news">
         <div className="head-news-img min-w-[50%]">
           <img
             src={mainNews.urlToImage}
             alt={mainNews.titles}
-            className="w-[100%] object-cover h-full"
+            className="w-[100%] object-cover h-[110%]"
           />
         </div>
 
-        <div className="head-news-text w-full max-w-[50%] bg-[white] p-[3vh] box-border">
-          <h2 className="text-[2.5rem] m-[0px] p-[3vh] border-b w-[80%]"><a href="#" className="text-[black] no-underline hover:text-[#ff2c99]">{mainNews.title}</a></h2>
-          <p className="text-[black] m-[0px] p-[3vh]">
-            {mainNews.description}
-          </p>
-          <span
-            href={mainNews.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="hover:underline p-[3vh]"
-          >
-            {mainNews.publishedAt}
-          </span>
+        <div className="head-news-text w-full max-w-[50%] bg-[white] p-[3vh] box-border flex flex-col items-center">
+          <h2 className="text-[3vw] m-[0px] p-[1vw] border-b">
+            <a
+              href="#"
+              className="text-[black] no-underline hover:text-[#ff2c99]"
+            >
+              {mainNews.title}
+            </a>
+          </h2>
+          <div className="w-[100%]">
+            <p className="text-[black] text-[1.2vw] m-[0px] px-[1vw] py-[0.5vw] haed-news-description">
+              {mainNews.content}
+            </p>
+            <p
+              href={mainNews.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:underline text-[1vw] px-[1vw] head-news-date m-[0px]"
+            >
+              {mainNews.publishedAt}
+            </p>
+          </div>
         </div>
       </div>
+      <CardNews news={news}/>
+      <PageNation />
     </div>
   );
 };

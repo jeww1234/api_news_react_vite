@@ -39,3 +39,16 @@ export default {
     autoprefixer: {},
   },
 };
+```
+
+## 5. tailwind 브레이크포인트
+
+```
+screens: {
+      sm: '640px',
+      md: '768px',
+      lg: '1024px',
+      xl: '1280px',
+    },
+
+```
