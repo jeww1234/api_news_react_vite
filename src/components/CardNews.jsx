@@ -9,7 +9,7 @@ moment.locale('ko');
 const CardNews = ({ news }) => {
   console.log("cardnews", news);
   return (
-    <div className="grid grid-cols-3 gap-4 mt-[8vw] card-grid">
+    <div className="grid grid-cols-3 gap-4 mt-[5vw] card-grid">
       {news.map((news, idx) => (
         <div
           key={idx}
@@ -22,7 +22,7 @@ const CardNews = ({ news }) => {
                 : "/No_Image.jpg"
             }
             alt={news.title}
-            className="card w-full max-h-[300px] h-[50%]"
+            className="card w-full max-h-[350px] min-h-[250px]"
             onError={(e) => {
               e.currentTarget.src = "/No_Image.jpg";
             }}

@@ -5,7 +5,7 @@ const LimitedText = ({ text, maxLength = 200 }) => {
 
   const limitedtext =
     text.length > maxLength ? text.slice(0, maxLength) + "..." : text;
-  return <div><p>{limitedtext}</p></div>;
+  return <div><p className="">{limitedtext}</p></div>;
 };
 
 export default LimitedText;

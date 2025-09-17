@@ -14,18 +14,18 @@ const NewsList = ({ news }) => {
   const mainNews = news[0];
 
   return (
-    <div className="max-w-[1450px] mt-[-12vh] mx-[auto]">
-      <div className="flex head-news">
+    <div className="head-news-box max-w-[1450px] mt-[-14vh] mx-[auto] z-998">
+      <div className="flex head-news max-h-[550px]">
         <div className="head-news-img min-w-[50%]">
           <img
-            src={mainNews.urlToImage}
+            src={mainNews.urlToImage ? mainNews.urlToImage : "/No_Image.jpg"}
             alt={mainNews.titles}
-            className="w-[100%] object-cover h-[110%]"
+            className="w-[100%] h-[100%]"
           />
         </div>
 
         <div className="head-news-text w-full max-w-[50%] bg-[white] p-[3vh] box-border flex flex-col items-center">
-          <h2 className="text-[3vw] m-[0px] p-[1vw] border-b">
+          <h2 className="text-[2vw] m-[0px] p-[1vw] border-b">
             <a
               href="#"
               className="text-[black] no-underline hover:text-[#ff2c99]"
@@ -33,7 +33,7 @@ const NewsList = ({ news }) => {
               {mainNews.title}
             </a>
           </h2>
-          <div className="w-[100%]">
+          <div className="w-[100%] max-h-[550px]">
             <p className="text-[black] text-[1.2vw] m-[0px] px-[1vw] py-[0.5vw] haed-news-description">
               {mainNews.content ? mainNews.content : "내용 없음 내용 없음 내용 없음"}
             </p>

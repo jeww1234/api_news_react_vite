@@ -1,17 +1,22 @@
-import React from "react";
+import React, { useState } from "react";
 
-const Nav = () => {
+const Nav = ({setUrl, setCategory}) => {
+  const [isOpen, setIsOpen] = useState(false);
+
+  const selectCategory = (e) =>{
+    setCategory(e.target.textContent)
+  }
+
   return (
     <div className="nav-btn-box mt-[2vh]">
-      <div className="category p-[3vw] text-[white]">
-        <a className="p-[4vh] mt-[2vh]">카테고리1</a>
-        <a className="p-[4vh] mt-[2vh]">카테고리2</a>
-        <a className="p-[4vh] mt-[2vh]">카테고리3</a>
-        <a className="p-[4vh] mt-[2vh]">카테고리4</a>
-        <a className="p-[4vh] mt-[2vh]">카테고리5</a>
-        <a className="p-[4vh] mt-[2vh]">카테고리6</a>
-        <a className="p-[4vh] mt-[2vh]">카테고리7</a>
-        <a className="p-[4vh] mt-[2vh]">카테고리8</a>
+      <div className="category p-[2vw] text-[white]">
+        <a onClick={(e)=>selectCategory(e)} className="p-[2.5vw] mt-[1.5vh] cursor-pointer">Business</a>
+        <a onClick={(e)=>selectCategory(e)} className="p-[2.5vw] mt-[1.5vh] cursor-pointer">Entertainment</a>
+        <a onClick={(e)=>selectCategory(e)} className="p-[2.5vw] mt-[1.5vh] cursor-pointer">General</a>
+        <a onClick={(e)=>selectCategory(e)} className="p-[2.5vw] mt-[1.5vh] cursor-pointer">Health</a>
+        <a onClick={(e)=>selectCategory(e)} className="p-[2.5vw] mt-[1.5vh] cursor-pointer">Science</a>
+        <a onClick={(e)=>selectCategory(e)} className="p-[2.5vw] mt-[1.5vh] cursor-pointer">Sports</a>
+        <a onClick={(e)=>selectCategory(e)} className="p-[2.5vw] mt-[1.5vh] cursor-pointer">Technology</a>
       </div>
     </div>
   );
