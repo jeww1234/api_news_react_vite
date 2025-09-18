@@ -108,6 +108,9 @@ body {
     left: 0;
     z-index: 1000;
   }
+  .head-news-img{
+    min-height: 370px;
+  }
 }
 
 /* 큰 화면 이상: 4열 */

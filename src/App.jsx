@@ -13,7 +13,7 @@ function App() {
   //noona url = "https://noona-times-be-5ca9402f90d9.herokuapp.com/top-headlines"
   const [url, setUrl] = useState(
     new URL(
-      `https://noona-times-be-5ca9402f90d9.herokuapp.com/top-headlines`
+      `https://noona-times-be-5ca9402f90d9.herokuapp.com/top-headlines?country=kr&category=${category}&apiKey=${API_KEY}`
     )
   );
 
@@ -33,7 +33,7 @@ function App() {
   useEffect(() => {
     if (category) {
       const newUrl = new URL(
-        `https://newsapi.org/v2/top-headlines?country=us&category=${category}&apiKey=${API_KEY}`
+        `https://noona-times-be-5ca9402f90d9.herokuapp.com/top-headlines?country=kr&category=${category}&apiKey=${API_KEY}`
       );
       setUrl(newUrl);
     }
