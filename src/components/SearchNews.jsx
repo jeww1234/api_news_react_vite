@@ -14,7 +14,7 @@ const SearchNews = () => {
           <img
             src="/돋보기.png"
             alt=""
-            className="me-[0.5vh] max-h-[18px] bg-[#ff2c99] rounded-[3px] p-[3px]"
+            className="me-[0.5vh] max-h-[18px] bg-[#ff2c99] rounded-[3px] p-[3px] cursor-pointer"
             onClick={showSearch}
           />
         </div>

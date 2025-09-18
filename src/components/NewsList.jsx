@@ -15,7 +15,7 @@ const NewsList = ({ news }) => {
 
   return (
     <div className="head-news-box max-w-[1450px] mt-[-14vh] mx-[auto] z-998">
-      <div className="flex head-news max-h-[550px]">
+      <div className="flex head-news min-h-[450px]">
         <div className="head-news-img min-w-[50%]">
           <img
             src={mainNews.urlToImage ? mainNews.urlToImage : "/No_Image.jpg"}
