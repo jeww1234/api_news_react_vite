@@ -1,16 +1,15 @@
 import React from "react";
 import LimitedText from "./LimitedText";
-import moment from 'moment';
-import 'moment/locale/ko';
+import moment from "moment";
+import "moment/locale/ko";
 
-moment.locale('ko');
+moment.locale("ko");
 
-
-const CardNews = ({ news }) => {
-  console.log("cardnews", news);
+const CardNews = ({ uniqueNews }) => {
+  console.log("uniqueNews", uniqueNews);
   return (
     <div className="grid grid-cols-3 gap-4 mt-[5vw] card-grid">
-      {news.map((news, idx) => (
+      {uniqueNews.map((news, idx) => (
         <div
           key={idx}
           className="card w-full min-h-[450px] flex flex-col p-[1vh] box-border"

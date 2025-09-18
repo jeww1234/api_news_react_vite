@@ -8,7 +8,7 @@ const Header = ({ setUrl, setCategory, showSideNav, setShowSideNav }) => {
     <div className="bg-[black]  relative">
       <div>
         <SideNav showSideNav={showSideNav} setShowSideNav={()=>setShowSideNav(prev=>!prev)} setCategory={setCategory}/>
-        <SearchNews />
+        <SearchNews setUrl={setUrl}/>
       </div>
       <div className="head-box flex flex-col items-center min-h-[450px]">
         <img

@@ -1,18 +1,21 @@
 import React from "react";
-import CardNews from "./CardNews"
+import CardNews from "./CardNews";
 import PageNation from "./PageNation";
-import moment from 'moment';
-import 'moment/locale/ko';
+import moment from "moment";
+import "moment/locale/ko";
 
-moment.locale('ko'); // 한국어로 설정
-
-
-
+moment.locale("ko"); // 한국어로 설정
 
 const NewsList = ({ news }) => {
   if (!news || news.length === 0) return <p>뉴스가 없습니다.</p>;
-  const mainNews = news[0];
 
+  const uniqueNews = news.filter(
+    (item, index, self) =>
+      index === self.findIndex((v) => v.title === item.title)
+  );
+
+  const randomIndex = Math.floor(Math.random() * uniqueNews.length);
+  const mainNews = uniqueNews[randomIndex];
   return (
     <div className="head-news-box max-w-[1450px] mt-[-14vh] mx-[auto] z-998">
       <div className="flex head-news min-h-[450px]">
@@ -35,9 +38,13 @@ const NewsList = ({ news }) => {
           </h2>
           <div className="w-[100%] max-h-[550px]">
             <p className="text-[black] text-[1.2vw] m-[0px] px-[1vw] py-[0.5vw] haed-news-description">
-              {mainNews.content ? mainNews.content : "내용 없음 내용 없음 내용 없음"}
+              {mainNews.content
+                ? mainNews.content
+                : "내용 없음 내용 없음 내용 없음"}
             </p>
-            <span>{mainNews.source.name ? mainNews.source.name : "소스 없음"}</span>
+            <span>
+              {mainNews.source.name ? mainNews.source.name : "소스 없음"}
+            </span>
             <span
               href={mainNews.url}
               target="_blank"
@@ -46,11 +53,10 @@ const NewsList = ({ news }) => {
             >
               {moment(mainNews.publishedAt).fromNow()}
             </span>
-            
           </div>
         </div>
       </div>
-      <CardNews news={news}/>
+      <CardNews uniqueNews={uniqueNews} />
       <PageNation />
     </div>
   );
