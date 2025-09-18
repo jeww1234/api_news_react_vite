@@ -3,11 +3,15 @@ import "./App.css";
 import NewsList from "./components/NewsList";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
+import { data } from "autoprefixer";
+
+//트라이 캐치
 
 function App() {
   const [news, setNews] = useState([]);
   const [category, setCategory] = useState("");
-  const [showSideNav, setShowSideNav] = useState(false);
+  const [showSideNav, setShowSideNav] = useState("false");
+  const [error, setError] = useState("");
   const API_KEY = "5ca19004f97f4f5f9d74d0fbb95b21dc";
   //news_api url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`
   //noona url = "https://noona-times-be-5ca9402f90d9.herokuapp.com/top-headlines"
@@ -21,10 +25,19 @@ function App() {
 
   useEffect(() => {
     const fetchNews = async () => {
-      const res = await fetch(url);
-      const data = await res.json();
-      console.log("data", data);
-      setNews(data.articles);
+      try {
+        const res = await fetch(url);
+        const data = await res.json();
+        if (res.status === 200) {
+          console.log("data", data);
+          setNews(data.articles);
+        } else {
+          throw new Error(data.message);
+        }
+      } catch (error) {
+        setError(error.message);
+        setNews([]);
+      }
     };
     fetchNews();
   }, [url]);
@@ -41,8 +54,13 @@ function App() {
 
   return (
     <div className="flex flex-col items-center">
-      <Header setUrl={setUrl} setCategory={setCategory} showSideNav={showSideNav} setShowSideNav={setShowSideNav}/>
-      <NewsList news={news} />
+      <Header
+        setUrl={setUrl}
+        setCategory={setCategory}
+        showSideNav={showSideNav}
+        setShowSideNav={setShowSideNav}
+      />
+      <NewsList news={news} error={error} />
       <Footer />
     </div>
   );

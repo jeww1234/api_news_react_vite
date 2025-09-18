@@ -4,10 +4,11 @@ import SearchNews from "./SearchNews";
 import SideNav from "./SideNav";
 
 const Header = ({ setUrl, setCategory, showSideNav, setShowSideNav }) => {
+  const categoryList = ["Business", "Entertainment", "General", "Health", "Science", "Sports", "Technology"]
   return (
     <div className="bg-[black]  relative">
       <div>
-        <SideNav showSideNav={showSideNav} setShowSideNav={()=>setShowSideNav(prev=>!prev)} setCategory={setCategory}/>
+        <SideNav showSideNav={showSideNav} setShowSideNav={()=>setShowSideNav(prev=>!prev)} setCategory={setCategory} categoryList={categoryList}/>
         <SearchNews setUrl={setUrl}/>
       </div>
       <div className="head-box flex flex-col items-center min-h-[450px]">
@@ -20,7 +21,7 @@ const Header = ({ setUrl, setCategory, showSideNav, setShowSideNav }) => {
         <p className="text-[white] italic font-[serif] text-[0.8em]">
           A Magazine of Politics and Culture
         </p>
-        <Nav setUrl={setUrl} setCategory={setCategory} />
+        <Nav setUrl={setUrl} setCategory={setCategory} categoryList={categoryList}/>
       </div>
     </div>
   );

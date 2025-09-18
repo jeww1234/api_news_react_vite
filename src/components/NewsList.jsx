@@ -6,8 +6,14 @@ import "moment/locale/ko";
 
 moment.locale("ko"); // 한국어로 설정
 
-const NewsList = ({ news }) => {
-  if (!news || news.length === 0) return <p>뉴스가 없습니다.</p>;
+const NewsList = ({ news, error }) => {
+  console.log("error", error);
+  if (!news || news.length === 0)
+    return (
+      <div className="w-[100%] max-w-[1545px] h-[10vh] bg-[pink] flex items-center justify-center ">
+        <p className="p-[0] m-[0] text-center">{error}</p>
+      </div>
+    );
 
   const uniqueNews = news.filter(
     (item, index, self) =>
@@ -18,8 +24,8 @@ const NewsList = ({ news }) => {
   const mainNews = uniqueNews[randomIndex];
   return (
     <div className="head-news-box max-w-[1450px] mt-[-14vh] mx-[auto] z-998">
-      <div className="flex head-news min-h-[450px]">
-        <div className="head-news-img min-w-[50%]">
+      <div className="flex head-news min-h-[350px]">
+        <div className="head-news-img min-w-[50%] min-h-[100%]">
           <img
             src={mainNews.urlToImage ? mainNews.urlToImage : "/No_Image.jpg"}
             alt={mainNews.titles}
@@ -38,8 +44,8 @@ const NewsList = ({ news }) => {
           </h2>
           <div className="w-[100%] max-h-[550px]">
             <p className="text-[black] text-[1.2vw] m-[0px] px-[1vw] py-[0.5vw] haed-news-description">
-              {mainNews.content
-                ? mainNews.content
+              {mainNews.description
+                ? mainNews.description
                 : "내용 없음 내용 없음 내용 없음"}
             </p>
             <span>

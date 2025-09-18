@@ -31,7 +31,7 @@ const CardNews = ({ uniqueNews }) => {
               {news.title}
             </h3>
             <div className="text-center text-[1.2vh] px-[2vh]">
-              <LimitedText text={news.content} maxLength={200} />
+              <LimitedText text={news.description} maxLength={200} />
             </div>
             <div className="text-center">
               <span className="text-[1.2vh] px-[2vh]">

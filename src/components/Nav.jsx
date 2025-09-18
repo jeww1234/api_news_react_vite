@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
-const Nav = ({ setUrl, setCategory }) => {
-  const [isOpen, setIsOpen] = useState(false);
+const Nav = ({ setCategory, categoryList }) => {
+
 
   const selectCategory = (e) => {
     setCategory(e.target.textContent.toLowerCase());
@@ -10,13 +10,10 @@ const Nav = ({ setUrl, setCategory }) => {
   return (
     <div className="nav-btn-box mt-[2vh]">
       <div className="category p-[2vw] text-[white]">
-        <a
-          onClick={(e) => selectCategory(e)}
-          className="p-[2.5vw] mt-[1.5vh] cursor-pointer"
-        >
-          Business
-        </a>
-        <a
+        {categoryList.map(item=>(
+          <a key={item} onClick={(e) => selectCategory(e)} className="p-[2.5vw] mt-[1.5vh] cursor-pointer">{item}</a>
+        ))}
+        {/* <a
           onClick={(e) => selectCategory(e)}
           className="p-[2.5vw] mt-[1.5vh] cursor-pointer"
         >
@@ -51,7 +48,7 @@ const Nav = ({ setUrl, setCategory }) => {
           className="p-[2.5vw] mt-[1.5vh] cursor-pointer"
         >
           Technology
-        </a>
+        </a> */}
       </div>
     </div>
   );
