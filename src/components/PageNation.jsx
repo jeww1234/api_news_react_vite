@@ -16,7 +16,11 @@ const PageNation = ({ news, pageSize, page, setPage }) => {
     const pages = [];
     for (let i = firstPage; i <= lastPage; i++) {
       pages.push(
-        <button key={i} onClick={() => handleClick(i)} className={`${i === page ? "bg-[skyblue]" : ""}  m-[5px]`}>
+        <button
+          key={i}
+          onClick={() => handleClick(i)}
+          className={`${i === page ? "bg-[skyblue]" : ""}  m-[5px] px-[10px]`}
+        >
           {i}
         </button>
       );
@@ -25,12 +29,32 @@ const PageNation = ({ news, pageSize, page, setPage }) => {
   };
 
   return (
-    <div className="flex justify-center my-[5vh]">
-      <button className={page === 1 ? "hidden" : ""} onClick={()=>setPage(1)}>&lt;&lt;</button>
-      <button className={page === 1 ? "hidden" : ""} onClick={() => setPage(Math.max(page - 1, 1))}>&lt;</button>
+    <div className="flex justify-center my-[5vh] cursor-pointer">
+      <div
+        className={`${page === 1 ? "hidden" : ""} p-[5px]`}
+        onClick={() => setPage(1)}
+      >
+        &lt;&lt;
+      </div>
+      <div
+        className={`${page === 1 ? "hidden" : ""} p-[5px]`}
+        onClick={() => setPage(Math.max(page - 1, 1))}
+      >
+        &lt;
+      </div>
       {renderPages()}
-      <button className={page === totalPages ? "hidden" : ""} onClick={() => setPage(Math.min(page + 1, totalPages))}>&gt;</button>
-      <button className={page === totalPages ? "hidden" : ""} onClick={()=>setPage(totalPages)}>&gt;&gt;</button>
+      <div
+        className={`${page === totalPages ? "hidden" : ""} p-[5px]`}
+        onClick={() => setPage(Math.min(page + 1, totalPages))}
+      >
+        &gt;
+      </div>
+      <div
+        className={`${page === totalPages ? "hidden" : "p-[5px]"}`}
+        onClick={() => setPage(totalPages)}
+      >
+        &gt;&gt;
+      </div>
     </div>
   );
 };
