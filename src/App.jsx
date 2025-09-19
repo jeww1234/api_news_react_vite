@@ -13,6 +13,16 @@ function App() {
   const [showSideNav, setShowSideNav] = useState("false");
   const [error, setError] = useState("");
   const API_KEY = "5ca19004f97f4f5f9d74d0fbb95b21dc";
+  const pageSize = 5;
+  const [page, setPage] = useState(1);
+
+  const uniqueNews = news.filter(
+    (item, index, self) =>
+      index === self.findIndex((v) => v.title === item.title)
+  );
+
+  const randomIndex = Math.floor(Math.random() * uniqueNews.length);
+  const mainNews = uniqueNews[randomIndex];
   //news_api url = `https://newsapi.org/v2/top-headlines?country=us&apiKey=${API_KEY}`
   //noona url = "https://noona-times-be-5ca9402f90d9.herokuapp.com/top-headlines"
   const [url, setUrl] = useState(
@@ -46,7 +56,7 @@ function App() {
   useEffect(() => {
     if (category) {
       const newUrl = new URL(
-        `https://noona-times-be-5ca9402f90d9.herokuapp.com/top-headlines?country=kr&category=${category}&apiKey=${API_KEY}`
+        `https://noona-times-be-5ca9402f90d9.herokuapp.com/top-headlines?country=kr&pageSize=30&category=${category}&apiKey=${API_KEY}`
       );
       setUrl(newUrl);
     }
@@ -59,8 +69,19 @@ function App() {
         setCategory={setCategory}
         showSideNav={showSideNav}
         setShowSideNav={setShowSideNav}
+        pageSize={pageSize}
+        page={page}
+        setPage={setPage}
       />
-      <NewsList news={news} error={error} />
+      <NewsList
+        news={news}
+        error={error}
+        mainNews={mainNews}
+        uniqueNews={uniqueNews}
+        pageSize={pageSize}
+        page={page}
+        setPage={setPage}
+      />
       {/* <Footer /> */}
     </div>
   );

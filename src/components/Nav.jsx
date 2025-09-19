@@ -1,17 +1,22 @@
 import React, { useState } from "react";
 
-const Nav = ({ setCategory, categoryList }) => {
-
-
+const Nav = ({ setCategory, categoryList, page, setPage, pageSize }) => {
   const selectCategory = (e) => {
     setCategory(e.target.textContent.toLowerCase());
+    setPage(1);
   };
 
   return (
     <div className="nav-btn-box mt-[2vh]">
       <div className="category p-[2vw] text-[white]">
-        {categoryList.map(item=>(
-          <a key={item} onClick={(e) => selectCategory(e)} className="p-[2.5vw] mt-[1.5vh] cursor-pointer">{item}</a>
+        {categoryList.map((item) => (
+          <a
+            key={item}
+            onClick={(e) => selectCategory(e)}
+            className="p-[2.5vw] mt-[1.5vh] cursor-pointer"
+          >
+            {item}
+          </a>
         ))}
         {/* <a
           onClick={(e) => selectCategory(e)}

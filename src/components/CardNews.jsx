@@ -27,7 +27,7 @@ const CardNews = ({ uniqueNews }) => {
             }}
           />
           <div className="w-[100%]">
-            <h3 className="text-center text-[2vh] hover:text-[#ff2c99]">
+            <h3 className="text-center text-[2vh] hover:text-[#ff2c99] p-[1vh]">
               {news.title}
             </h3>
             <div className="text-center text-[1.2vh] px-[2vh]">

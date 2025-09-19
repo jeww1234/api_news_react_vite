@@ -3,7 +3,7 @@ import Nav from "./Nav";
 import SearchNews from "./SearchNews";
 import SideNav from "./SideNav";
 
-const Header = ({ setUrl, setCategory, showSideNav, setShowSideNav }) => {
+const Header = ({ setUrl, setCategory, showSideNav, setShowSideNav, page, setPage, pageSize }) => {
   const categoryList = ["Business", "Entertainment", "General", "Health", "Science", "Sports", "Technology"]
   return (
     <div className="bg-[black]  relative">
@@ -21,7 +21,7 @@ const Header = ({ setUrl, setCategory, showSideNav, setShowSideNav }) => {
         <p className="text-[white] italic font-[serif] text-[0.8em]">
           A Magazine of Politics and Culture
         </p>
-        <Nav setUrl={setUrl} setCategory={setCategory} categoryList={categoryList}/>
+        <Nav setUrl={setUrl} setCategory={setCategory} categoryList={categoryList} page={page} setPage={setPage} pageSize={pageSize}/>
       </div>
     </div>
   );

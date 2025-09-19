@@ -1,23 +1,31 @@
-import React from "react";
 
-const PageNation = ({ news }) => {
-  let totalResult = news.length;
-  console.log("total", totalResult);
-  let page = 1;
-  const pageSize = 5;
+const PageNation = ({ news, pageSize, page, setPage }) => {
+  const totalResult = news.length;
   const groupSize = 5;
+  const totalPages = Math.ceil(totalResult / pageSize);  
+
   const pageGroup = Math.ceil(page / groupSize);
   const lastPage = pageGroup * groupSize;
   const firstPage = lastPage - (groupSize - 1);
 
-  return (
-    <div className="flex justify-center">
-      <div>1</div>
-      <div>2</div>
-      <div>3</div>
-      <div>4</div>
-    </div>
-  );
+  const handleClick = (pageNum) => {
+    console.log(pageNum)
+    setPage(pageNum);
+  };
+
+  const renderPages = () => {
+    const pages = [];
+    for (let i = firstPage; i <= lastPage; i++) {
+      pages.push(
+        <button key={i} onClick={() => handleClick(i)} className="m-[5px]">
+          {i}
+        </button>
+      );
+    }
+    return pages;
+  };
+
+  return <div className="flex justify-center">{renderPages()}</div>;
 };
 
 export default PageNation;
