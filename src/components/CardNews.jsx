@@ -12,7 +12,7 @@ const CardNews = ({ uniqueNews }) => {
       {uniqueNews.map((news, idx) => (
         <div
           key={idx}
-          className="card w-full min-h-[450px] flex flex-col p-[1vh] box-border"
+          className="card w-full min-h-[450px] flex flex-col p-[2vh] box-border shadow-[0_4px_6px_rgba(0,0,0,0.1)]"
         >
           <img
             src={
