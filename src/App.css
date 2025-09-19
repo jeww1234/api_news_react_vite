@@ -139,7 +139,13 @@ body {
   .head-news-box {
     margin-top: clamp(-300px, -5vh, -50px);
   }
+  .head-news-img img{
+    max-height: 250px;
+  }
   .logo {
     margin-top: clamp(5px, 1vw, 25px);
+  }
+  .card img{
+    max-width: 100%;
   }
 }

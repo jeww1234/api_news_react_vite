@@ -3,6 +3,7 @@ import React, { useState } from "react";
 const SideNav = ({ showSideNav, setShowSideNav, setCategory, categoryList}) => {
   const selectCategory = (e) =>{
     setCategory(e.target.textContent.toLowerCase())
+    setShowSideNav()
   }  
   return (
     <div className="side-nav-box hidden">
