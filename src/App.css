@@ -67,8 +67,7 @@ body {
 @media screen and (max-width: 768px) {
   .head-box {
     margin-top: 25px;
-    min-height: 300px;
-    max-height: 350px;
+    min-height: 350px;
   }
   .nav-btn-box {
     display: none;
@@ -78,6 +77,9 @@ body {
   }
   .head-news-text {
     margin-top: -2vh;
+  }
+  .card{
+    min-height: 200px;
   }
   .side-nav-box {
     display: block;

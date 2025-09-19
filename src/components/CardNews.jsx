@@ -21,7 +21,7 @@ const CardNews = ({ uniqueNews }) => {
                 : "/No_Image.jpg"
             }
             alt={news.title}
-            className="card w-full max-h-[350px] min-h-[250px]"
+            className="card w-full max-h-[400px] min-h-[250px]"
             onError={(e) => {
               e.currentTarget.src = "/No_Image.jpg";
             }}

@@ -63,7 +63,7 @@ const NewsList = ({ news, error }) => {
         </div>
       </div>
       <CardNews uniqueNews={uniqueNews} />
-      <PageNation />
+      <PageNation news={news}/>
     </div>
   );
 };

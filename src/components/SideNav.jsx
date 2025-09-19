@@ -10,7 +10,7 @@ const SideNav = ({ showSideNav, setShowSideNav, setCategory, categoryList}) => {
 
       <div>
         {/* 사이드 메뉴 */}
-        <div className={`${showSideNav ? "block" : "hidden"} side-menu`}>
+        <div className={`${showSideNav ? "hidden" : "block"} side-menu`}>
           <div className="flex justify-end p-[15px]">
             <button onClick={setShowSideNav} className="cursor-pointer">x</button>
           </div>
