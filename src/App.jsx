@@ -13,7 +13,7 @@ function App() {
   const [showSideNav, setShowSideNav] = useState("false");
   const [error, setError] = useState("");
   const API_KEY = "5ca19004f97f4f5f9d74d0fbb95b21dc";
-  const pageSize = 5;
+  const pageSize = 4;
   const [page, setPage] = useState(1);
 
   const uniqueNews = news.filter(
@@ -27,7 +27,7 @@ function App() {
   //noona url = "https://noona-times-be-5ca9402f90d9.herokuapp.com/top-headlines"
   const [url, setUrl] = useState(
     new URL(
-      `https://noona-times-be-5ca9402f90d9.herokuapp.com/top-headlines?country=kr&pageSize=30&category=${category}&apiKey=${API_KEY}`
+      `https://noona-times-be-5ca9402f90d9.herokuapp.com/top-headlines?country=kr&pageSize=40&category=${category}&apiKey=${API_KEY}`
     )
   );
 

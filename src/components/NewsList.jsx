@@ -25,11 +25,11 @@ const NewsList = ({ news, error, uniqueNews, mainNews, setPage, page, pageSize }
           <img
             src={mainNews.urlToImage ? mainNews.urlToImage : "/No_Image.jpg"}
             alt={mainNews.titles}
-            className="w-[100%] h-[50vh] max-h-[450px]"
+            className="w-[100%] h-[50vh] max-h-[400px]"
           />
         </div>
 
-        <div className="head-news-text w-full max-w-[50%] bg-[white] p-[3vh] box-border flex flex-col items-center">
+        <div className="head-news-text w-full max-w-[50%] bg-[white] p-[3vh] box-border flex flex-col items-center justify-center">
           <h2 className="text-[2vw] m-[0px] p-[1vw] border-b">
             <a
               href="#"
