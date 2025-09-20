@@ -134,7 +134,7 @@ body {
     padding-top: 20px;
   }
   .head-news-box {
-    margin-top: clamp(-300px, -5vh, -50px);
+    margin-top: clamp(-50px, -10vh, -50px);
   }
   .head-news-img img{
     max-height: 250px;

@@ -23,7 +23,7 @@ const Header = ({
   ];
   return (
     <div className="bg-[black] relative">
-      <div className="fixed">
+      <div className="fixed z-3">
         <div className="bg-[black] min-w-[1545px] h-[2.5vh] py-[1vh] flex items-center">
           <SideNav
             showSideNav={showSideNav}
