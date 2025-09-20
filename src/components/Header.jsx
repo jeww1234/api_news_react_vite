@@ -7,7 +7,7 @@ const Header = ({ setUrl, setCategory, showSideNav, setShowSideNav, page, setPag
   const categoryList = ["Business", "Entertainment", "General", "Health", "Science", "Sports", "Technology"]
   return (
     <div className="bg-[black]">
-      <div className="bg-[black] w-[100%] h-[2.5vh] fixed flex items-center py-[1vh] px-[0.5vh]">
+      <div className="bg-[black] max-w-[1545px] w-[100%] h-[2.5vh] fixed flex items-center py-[1vh]">
         <SideNav showSideNav={showSideNav} setShowSideNav={()=>setShowSideNav(prev=>!prev)} setCategory={setCategory} categoryList={categoryList}/>
         <SearchNews setUrl={setUrl}/>
       </div>
