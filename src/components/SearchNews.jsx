@@ -21,26 +21,26 @@ const SearchNews = ({ setUrl }) => {
   };
 
   return (
-    <div className="search-news-box text-[white] top-[10px] left-[45px] relative">
-      <div className="flex items-center fixed">
+    <div className="search-news-box text-[white]">
+      <div className="flex items-center">
         <div className="ms-[0.2vh] flex items-center max-h-[30px]">
           <img
             src="/돋보기.png"
             alt=""
-            className="me-[0.5vh] max-h-[18px] bg-[#ff2c99] rounded-[3px] p-[3px] cursor-pointer"
+            className="me-[0.5vh] max-h-[18px] bg-[#ff2c99] rounded-[3px] p-[3px] border-[1px] cursor-pointer ms-[40px]"
             onClick={showSearch}
           />
         </div>
         <div className={SearchState ? "block" : "invisible"}>
           <input
             type="text"
-            className="p-[3px] border-0 border-2 border-[#ff2c99]"
+            className="p-[3px] border-0 border-2 border-[#ff2c99] bg-[white]"
             onChange={(e) => setKeyword(e.target.value)}
             onKeyDown={(e) => {
               if (e.key === "Enter") handleSearch();
             }}
           />
-          <button className="ms-[0.3vh] bg-[white] max-h-[30px] p-[3px]">
+          <button className="ms-[0.3vh] bg-[#ff2c99] max-h-[30px] p-[3px]" style={{fontWeight:"boler"}}>
             Go
           </button>
         </div>

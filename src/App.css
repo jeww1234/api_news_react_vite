@@ -84,13 +84,11 @@ body {
   .side-nav-box {
     display: block;
     color: white;
-    position: fixed;
     top: 10px;
     left: 10px;
     max-width: 25px;
     max-height: 25px;
     border: 1px solid white;
-    z-index: 999;
   }
 
   .side-nav-box img {
@@ -98,17 +96,16 @@ body {
     height: 100%;
   }
   .search-news-box {
-    position: fixed;
-    z-index: 998;
     left: 40px;    
+  }
+  .search-news-box img{
+    margin-left: 5px;
   }
   .side-menu{
     width: clamp(180px, 20vw, 400px);
     height: clamp(250px, 35vh, 400px);
-    position: fixed;
     top: 0;
     left: 0;
-    z-index: 1000;
     background-color: black;    
   }
   .head-news-img{

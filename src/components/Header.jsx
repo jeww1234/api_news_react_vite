@@ -6,8 +6,8 @@ import SideNav from "./SideNav";
 const Header = ({ setUrl, setCategory, showSideNav, setShowSideNav, page, setPage, pageSize }) => {
   const categoryList = ["Business", "Entertainment", "General", "Health", "Science", "Sports", "Technology"]
   return (
-    <div className="bg-[black]  relative">
-      <div>
+    <div className="bg-[black]">
+      <div className="bg-[black] w-[100%] h-[2.5vh] fixed flex items-center py-[1vh] px-[0.5vh]">
         <SideNav showSideNav={showSideNav} setShowSideNav={()=>setShowSideNav(prev=>!prev)} setCategory={setCategory} categoryList={categoryList}/>
         <SearchNews setUrl={setUrl}/>
       </div>
@@ -15,7 +15,7 @@ const Header = ({ setUrl, setCategory, showSideNav, setShowSideNav, page, setPag
         <img
           src="/logo-w-black.png"
           alt="head-logo"
-          className="logo p-[0.5vh] box-border max-w-[70%]"
+          className="logo p-[0.5vh] box-border max-w-[70%] mt-[2vh]"
         />
         <div className="w-[5vh] h-[0.1vh] bg-[white] my-[1vh]"></div>
         <p className="text-[white] italic font-[serif] text-[0.8em]">

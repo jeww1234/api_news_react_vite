@@ -19,13 +19,13 @@ const NewsList = ({ news, error, uniqueNews, mainNews, setPage, page, pageSize }
   const endIdx = startIdx + pageSize;
   const pagedNews = uniqueNews.slice(startIdx, endIdx);
   return (
-    <div className="head-news-box max-w-[1450px] mt-[-14vh] mx-[auto] z-998">
+    <div className="head-news-box max-w-[1450px] mt-[-14vh] mx-[auto]">
       <div className="flex head-news min-h-[350px]">
         <div className="head-news-img min-w-[50%] min-h-[100%]">
           <img
             src={mainNews.urlToImage ? mainNews.urlToImage : "/No_Image.jpg"}
             alt={mainNews.titles}
-            className="w-[100%] h-[50vh] max-h-[400px]"
+            className="w-[100%] h-[50vh] max-h-[400px] z-1"
           />
         </div>
 

@@ -1,7 +1,7 @@
 const PageNation = ({ news, pageSize, page, setPage }) => {
   const totalResult = news.length;
   const groupSize = 5;
-  const totalPages = Math.ceil(totalResult / pageSize);
+  const totalPages = Math.max(1, Math.ceil(totalResult / pageSize));
 
   const pageGroup = Math.ceil(page / groupSize);
   const lastPage = Math.min(pageGroup * groupSize, totalPages);
